@@ -13,9 +13,9 @@
 </head>
 <body class="font-sans antialiased bg-gray-50 text-gray-900">
   <!-- Navigation -->
-  <nav class="fixed w-full bg-white bg-opacity-70 backdrop-blur-md shadow-sm z-10">
+  <nav class="fixed w-full bg-white bg-opacity-80 backdrop-blur-md shadow z-10">
     <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold text-blue-800">Rovanid</a>
+      <a href="#" class="text-2xl font-bold text-blue-800">Rovanid</a>
       <div class="space-x-6">
         <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
         <a href="#projects" class="text-gray-700 hover:text-blue-600">Projects</a>
@@ -39,7 +39,7 @@
   <section id="about" class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-semibold mb-6">About Me</h2>
-      <p class="text-lg text-gray-700">I build mobile & web tools, contribute to open‑source and love sharing knowledge. Explore my GitHub repositories for Android apps, Flutter/Dart projects, and more.</p>
+      <p class="text-lg text-gray-700">I build mobile &amp; web tools, contribute to open‑source and love sharing knowledge. Check my GitHub for Android, Flutter/Dart projects and more.</p>
     </div>
   </section>
 
@@ -81,8 +81,8 @@
   </footer>
 
   <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a, .scroll-down').forEach(el => {
+    // Smooth scrolling for nav links and down arrow
+    document.querySelectorAll('nav a, .animate-bounce').forEach(el => {
       el.addEventListener('click', e => {
         e.preventDefault();
         const target = document.querySelector(el.getAttribute('href'));
