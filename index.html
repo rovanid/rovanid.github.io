@@ -1,20 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Rovanid GitHub Pages</title>
-  <style>
-    body{font-family:sans-serif;background:#f4f4f4;color:#333;margin:0;padding:0;display:flex;justify-content:center;align-items:center;height:100vh;}
-    .container{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);text-align:center;}
-    h1{margin:0 0 1rem;}
-    a{color:#0366d6;text-decoration:none;}
-    a:hover{text-decoration:underline;}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rovanid – Developer Portfolio</title>
+  <meta name="description" content="Rovanid – open‑source developer, mobile & web projects, and contact information.">
+  <meta property="og:title" content="Rovanid – Developer Portfolio">
+  <meta property="og:description" content="Open‑source projects, tech blog and ways to get in touch.">
+  <meta property="og:image" content="https://rovanid.github.io/assets/avatar.png">
+  <meta property="og:url" content="https://rovanid.github.io/">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to Rovanid's GitHub Pages</h1>
-    <p>Explore my projects on <a href="https://github.com/rovanid" target="_blank">GitHub</a>.</p>
-  </div>
+  <header class="hero">
+    <h1>Rovanid</h1>
+    <p>Open‑source developer – Android, Kotlin, Dart &amp; more.</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Hello! I build mobile & web tools, contribute to open‑source and love sharing knowledge. Explore my GitHub repositories for Android apps, Flutter/Dart projects, and more.</p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Lapor‑Pak</h3>
+        <p>A Wi‑Fi issue reporting app for customers, technicians and admins.</p>
+        <a href="https://github.com/rovanid/Lapor-Pak" target="_blank">View on GitHub</a>
+      </article>
+      <article class="card">
+        <h3>cloudstream‑plugin</h3>
+        <p>Extension for the CloudStream video streaming app.</p>
+        <a href="https://github.com/rovanid/cloudstream-plugin" target="_blank">View on GitHub</a>
+      </article>
+      <article class="card">
+        <h3>recloudstream</h3>
+        <p>Alternative backend for CloudStream.</p>
+        <a href="https://github.com/rovanid/recloudstream" target="_blank">View on GitHub</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Reach out via <a href="mailto:rovanid@example.com">email</a> or open an issue on any repository.</p>
+    <form action="https://github.com/rovanid" method="GET" target="_blank">
+      <button type="submit">Visit My GitHub</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Rovanid – All rights reserved.</p>
+  </footer>
+<script>
+document.querySelectorAll('nav a').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
+window.addEventListener('scroll',()=>{let sections=document.querySelectorAll('section');let scrollPos=window.scrollY+200;sections.forEach(sec=>{if(scrollPos>=sec.offsetTop){document.querySelectorAll('nav a').forEach(link=>link.classList.remove('active'));document.querySelector('nav a[href="#'+sec.id+'"]').classList.add('active');}});});
+</script>
 </body>
 </html>
