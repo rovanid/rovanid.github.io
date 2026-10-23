@@ -62,20 +62,21 @@
   </footer>
 
     <script>
-      // Fetch public repos via GitHub API and render cards
+      // Fetch public repos via GitHub API and render cards, exclude the landing page repo
       fetch('https://api.github.com/users/rovanid/repos?per_page=100')
         .then(r=>r.json())
         .then(repos=>{
           const container=document.getElementById('repo-list');
-          repos.filter(r=>!r.private).forEach(repo=>{
-            const card=document.createElement('div');
-            card.className='bg-white p-6 rounded-lg shadow hover:shadow-lg transition';
-            card.innerHTML=`
-              <h3 class='text-xl font-bold mb-2 text-indigo-700'>${repo.name}</h3>
-              <p class='text-gray-600 mb-4'>${repo.description||'No description'}</p>
-              <a href='${repo.html_url}' target='_blank' class='text-indigo-600 hover:underline'>View on GitHub</a>`;
-            container.appendChild(card);
-          });
+          repos.filter(r=>!r.private && r.name!=='rovanid.github.io')
+            .forEach(repo=>{
+              const card=document.createElement('div');
+              card.className='bg-white p-6 rounded-lg shadow hover:shadow-lg transition';
+              card.innerHTML=`
+                <h3 class='text-xl font-bold mb-2 text-indigo-700'>${repo.name}</h3>
+                <p class='text-gray-600 mb-4'>${repo.description||'No description'}</p>
+                <a href='${repo.html_url}' target='_blank' class='text-indigo-600 hover:underline'>View on GitHub</a>`;
+              container.appendChild(card);
+            });
         });
     </script>
 </body>
