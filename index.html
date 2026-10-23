@@ -4,69 +4,91 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rovanid – Developer Portfolio</title>
-  <meta name="description" content="Rovanid – open‑source developer, mobile & web projects, and contact information.">
+  <meta name="description" content="Rovanid – open‑source developer, Android, Kotlin, Dart and more.">
   <meta property="og:title" content="Rovanid – Developer Portfolio">
-  <meta property="og:description" content="Open‑source projects, tech blog and ways to get in touch.">
+  <meta property="og:description" content="Open‑source projects and contact information.">
   <meta property="og:image" content="https://rovanid.github.io/assets/avatar.png">
   <meta property="og:url" content="https://rovanid.github.io/">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 to-blue-600 text-white relative overflow-hidden" style="background-image:url('https://source.unsplash.com/featured/1200x800?technology');background-size:cover;background-position:center;">
-      <h1 class="text-5xl font-bold mb-4">Rovanid</h1>
-      <p class="text-xl mb-6">Open‑source developer – Android, Kotlin, Dart &amp; more.</p>
-      <nav class="flex space-x-6">
-        <a href="#about" class="text-white hover:underline">About</a>
-        <a href="#projects" class="text-white hover:underline">Projects</a>
-        <a href="#contact" class="text-white hover:underline">Contact</a>
-      </nav>
-      <a href="#projects" class="mt-8">
-        <button class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded">View My Projects</button>
-      </a>
-      <a href="#about" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-5xl text-white cursor-pointer animate-bounce">&#x25BC;</a>
-    </header>
+<body class="font-sans antialiased bg-gray-50 text-gray-900">
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white bg-opacity-70 backdrop-blur-md shadow-sm z-10">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold text-blue-800">Rovanid</a>
+      <div class="space-x-6">
+        <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="#projects" class="text-gray-700 hover:text-blue-600">Projects</a>
+        <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-
-    <section id="about" class="py-20 max-w-4xl mx-auto text-center opacity-0 transition-opacity duration-700">
-    <h2>About Me</h2>
-    <p>Hello! I build mobile & web tools, contribute to open‑source and love sharing knowledge. Explore my GitHub repositories for Android apps, Flutter/Dart projects, and more.</p>
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-indigo-800 text-white relative" style="background-image:url('https://source.unsplash.com/featured/1600x900?technology');background-size:cover;background-position:center;">
+    <div class="absolute inset-0 bg-black opacity-40"></div>
+    <div class="relative text-center max-w-2xl">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">Rovanid</h1>
+      <p class="text-xl md:text-2xl mb-6">Open‑source developer – Android, Kotlin, Dart &amp; more.</p>
+      <a href="#projects" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-md transition">View My Projects</a>
+    </div>
+    <a href="#about" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-4xl animate-bounce">&#x25BC;</a>
   </section>
 
-    <section id="projects" class="py-20 max-w-4xl mx-auto text-center opacity-0 transition-opacity duration-700">
-    <h2>Projects</h2>
-    <div class="grid">
-      <article class="card">
-        <h3>Lapor‑Pak</h3>
-        <p>A Wi‑Fi issue reporting app for customers, technicians and admins.</p>
-        <a href="https://github.com/rovanid/Lapor-Pak" target="_blank">View on GitHub</a>
-      </article>
-      <article class="card">
-        <h3>cloudstream‑plugin</h3>
-        <p>Extension for the CloudStream video streaming app.</p>
-        <a href="https://github.com/rovanid/cloudstream-plugin" target="_blank">View on GitHub</a>
-      </article>
-      <article class="card">
-        <h3>recloudstream</h3>
-        <p>Alternative backend for CloudStream.</p>
-        <a href="https://github.com/rovanid/recloudstream" target="_blank">View on GitHub</a>
-      </article>
+  <!-- About -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold mb-6">About Me</h2>
+      <p class="text-lg text-gray-700">I build mobile & web tools, contribute to open‑source and love sharing knowledge. Explore my GitHub repositories for Android apps, Flutter/Dart projects, and more.</p>
     </div>
   </section>
 
-    <section id="contact" class="py-20 max-w-4xl mx-auto text-center opacity-0 transition-opacity duration-700">
-    <h2>Contact</h2>
-    <p>Reach out via <a href="mailto:rovanid@example.com">email</a> or open an issue on any repository.</p>
-    <form action="https://github.com/rovanid" method="GET" target="_blank">
-      <button type="submit">Visit My GitHub</button>
-    </form>
+  <!-- Projects -->
+  <section id="projects" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold text-center mb-12">Projects</h2>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-bold mb-2">Lapor‑Pak</h3>
+          <p class="text-gray-600 mb-4">Wi‑Fi issue reporting app for customers, technicians and admins.</p>
+          <a href="https://github.com/rovanid/Lapor-Pak" target="_blank" class="text-blue-600 hover:underline">View on GitHub</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-bold mb-2">cloudstream‑plugin</h3>
+          <p class="text-gray-600 mb-4">Extension for the CloudStream video streaming app.</p>
+          <a href="https://github.com/rovanid/cloudstream-plugin" target="_blank" class="text-blue-600 hover:underline">View on GitHub</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-bold mb-2">recloudstream</h3>
+          <p class="text-gray-600 mb-4">Alternative backend for CloudStream.</p>
+          <a href="https://github.com/rovanid/recloudstream" target="_blank" class="text-blue-600 hover:underline">View on GitHub</a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold mb-6">Contact</h2>
+      <p class="text-lg text-gray-700 mb-4">Reach out via <a href="mailto:rovanid@example.com" class="text-blue-600 hover:underline">email</a> or open an issue on any repository.</p>
+      <a href="https://github.com/rovanid" target="_blank" class="inline-block bg-gray-800 hover:bg-gray-900 text-white font-medium py-3 px-6 rounded-md transition">Visit My GitHub</a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-gray-200 py-4 text-center text-sm">
     <p>&copy; 2026 Rovanid – All rights reserved.</p>
   </footer>
-<script>
-document.querySelectorAll('nav a').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
-window.addEventListener('scroll',()=>{let sections=document.querySelectorAll('section');let scrollPos=window.scrollY+200;sections.forEach(sec=>{if(scrollPos>=sec.offsetTop){document.querySelectorAll('nav a').forEach(link=>link.classList.remove('active'));document.querySelector('nav a[href="#'+sec.id+'"]').classList.add('active');}});});
-</script>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a, .scroll-down').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(el.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
