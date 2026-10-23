@@ -24,39 +24,21 @@
     </div>
   </nav>
 
-  <!-- About -->
-  <section id="about" class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-semibold mb-6 text-gray-800"><span class="border-b-4 border-indigo-500 pb-1">About Me</span>
-      </h2>
-      <p class="text-lg text-gray-600">
-        I build mobile & web tools, contribute to open‑source and love sharing knowledge. Explore my GitHub for Android apps, Flutter/Dart projects and more.
-      </p>
-    </div>
-  </section>
+<<<<<<< HEAD
+    <!-- About -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-2xl mx-auto px-4 text-center md:text-left md:max-w-4xl">
+        <h2 class="text-3xl font-semibold mb-6 text-gray-800">About Me</h2>
+        <p class="text-lg text-gray-600">I build mobile &amp; web tools, contribute to open‑source and love sharing knowledge. Explore my GitHub for Android apps, Flutter/Dart projects and more.</p>
+      </div>
+    </section>
 
   <!-- Projects -->
   <section id="projects" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-3xl font-semibold text-center mb-12 text-gray-800"><span class="border-b-4 border-indigo-500 pb-1">Projects</span>
       </h2>
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold mb-2 text-indigo-700">Lapor‑Pak</h3>
-          <p class="text-gray-600 mb-4">Wi‑Fi issue reporting app for customers, technicians and admins.</p>
-          <a href="https://github.com/rovanid/Lapor-Pak" target="_blank" class="text-indigo-600 hover:underline">View on GitHub</a>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold mb-2 text-indigo-700">cloudstream‑plugin</h3>
-          <p class="text-gray-600 mb-4">Extension for the CloudStream video streaming app.</p>
-          <a href="https://github.com/rovanid/cloudstream-plugin" target="_blank" class="text-indigo-600 hover:underline">View on GitHub</a>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold mb-2 text-indigo-700">recloudstream</h3>
-          <p class="text-gray-600 mb-4">Alternative backend for CloudStream.</p>
-          <a href="https://github.com/rovanid/recloudstream" target="_blank" class="text-indigo-600 hover:underline">View on GitHub</a>
-        </div>
-      </div>
+        <div id="repo-list" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"></div>
     </div>
   </section>
 
@@ -79,15 +61,22 @@
     <p>&copy; 2026 Rovanid – All rights reserved.</p>
   </footer>
 
-  <script>
-    // Smooth scroll for navigation links and down arrow
-    document.querySelectorAll('nav a, .animate-bounce').forEach(el => {
-      el.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(el.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
+    <script>
+      // Fetch public repos via GitHub API and render cards
+      fetch('https://api.github.com/users/rovanid/repos?per_page=100')
+        .then(r=>r.json())
+        .then(repos=>{
+          const container=document.getElementById('repo-list');
+          repos.filter(r=>!r.private).forEach(repo=>{
+            const card=document.createElement('div');
+            card.className='bg-white p-6 rounded-lg shadow hover:shadow-lg transition';
+            card.innerHTML=`
+              <h3 class='text-xl font-bold mb-2 text-indigo-700'>${repo.name}</h3>
+              <p class='text-gray-600 mb-4'>${repo.description||'No description'}</p>
+              <a href='${repo.html_url}' target='_blank' class='text-indigo-600 hover:underline'>View on GitHub</a>`;
+            container.appendChild(card);
+          });
+        });
+    </script>
 </body>
 </html>
