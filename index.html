@@ -9,28 +9,30 @@
   <meta property="og:description" content="Open‑source projects, tech blog and ways to get in touch.">
   <meta property="og:image" content="https://rovanid.github.io/assets/avatar.png">
   <meta property="og:url" content="https://rovanid.github.io/">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <header class="hero">
-    <h1>Rovanid</h1>
-    <p>Open‑source developer – Android, Kotlin, Dart &amp; more.</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-</nav>
-    <a href="#projects" class="cta-button"><button>View My Projects</button></a>
-    <a href="#about" class="scroll-down">&#x25BC;</a>
+    <header class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 to-blue-600 text-white relative overflow-hidden" style="background-image:url('https://source.unsplash.com/featured/1200x800?technology');background-size:cover;background-position:center;">
+      <h1 class="text-5xl font-bold mb-4">Rovanid</h1>
+      <p class="text-xl mb-6">Open‑source developer – Android, Kotlin, Dart &amp; more.</p>
+      <nav class="flex space-x-6">
+        <a href="#about" class="text-white hover:underline">About</a>
+        <a href="#projects" class="text-white hover:underline">Projects</a>
+        <a href="#contact" class="text-white hover:underline">Contact</a>
+      </nav>
+      <a href="#projects" class="mt-8">
+        <button class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded">View My Projects</button>
+      </a>
+      <a href="#about" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-5xl text-white cursor-pointer animate-bounce">&#x25BC;</a>
+    </header>
 
 
-    <section id="about" class="section fade-in">
+    <section id="about" class="py-20 max-w-4xl mx-auto text-center opacity-0 transition-opacity duration-700">
     <h2>About Me</h2>
     <p>Hello! I build mobile & web tools, contribute to open‑source and love sharing knowledge. Explore my GitHub repositories for Android apps, Flutter/Dart projects, and more.</p>
   </section>
 
-  <section id="projects" class="section">
+    <section id="projects" class="py-20 max-w-4xl mx-auto text-center opacity-0 transition-opacity duration-700">
     <h2>Projects</h2>
     <div class="grid">
       <article class="card">
@@ -51,7 +53,7 @@
     </div>
   </section>
 
-  <section id="contact" class="section">
+    <section id="contact" class="py-20 max-w-4xl mx-auto text-center opacity-0 transition-opacity duration-700">
     <h2>Contact</h2>
     <p>Reach out via <a href="mailto:rovanid@example.com">email</a> or open an issue on any repository.</p>
     <form action="https://github.com/rovanid" method="GET" target="_blank">
